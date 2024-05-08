@@ -73,7 +73,9 @@
   gap: 5px;
   flex-wrap: wrap;
 }
-
+* body main .buttons a {
+  text-decoration: none;
+}
 * body main .buttons .checkout {
   color: white;
   font-family: "Teachers", sans-serif;
