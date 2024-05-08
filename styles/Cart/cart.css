@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  padding-inline: clamp(2rem, 5vw, 10rem);
+  padding-inline: 5vw;
 }
 
 * body nav .title {
@@ -31,8 +31,7 @@
   border-radius: 5px;
 }
 
-* body nav .logo a,
-* body nav .logo .icon {
+* body nav .logo a, * body nav .logo .icon {
   color: #212529;
   font-size: 1.5rem;
 }
@@ -43,7 +42,7 @@
   top: -30%;
   right: -30%;
   color: white;
-  padding: 5px;
+  padding: 4px;
   border-radius: 5px;
   font-family: "Poetsen One", sans-serif;
   font-weight: 400;
@@ -73,9 +72,11 @@
   gap: 5px;
   flex-wrap: wrap;
 }
+
 * body main .buttons a {
   text-decoration: none;
 }
+
 * body main .buttons .checkout {
   color: white;
   font-family: "Teachers", sans-serif;
@@ -214,4 +215,6 @@
   font-style: normal;
   font-size: clamp(1.5rem, 1.5vw, 10rem);
 }
+
+
 
