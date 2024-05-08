@@ -48,34 +48,30 @@ $bg-color: #212529;
             background-color: $bg-color;
             @include flex;
             justify-content: space-between;
-            padding-inline: clamp(2rem,5vw,10rem);
+            padding-inline: 5vw;
 
             .title {
                 color: white;
                 font-size: clamp(1rem, 2vw, 10rem);
-
+                
                 @include Posten;
             }
-
-            .logo {
+            .logo{
                 position: relative;
                 background-color: white;
-                padding: 5px;
+                padding:5px;
                 border-radius: 5px;
-
-                a,
-                .icon {
+                a,.icon{
                     color: $bg-color;
                     font-size: 1.5rem;
                 }
-
-                .counter {
+                .counter{
                     position: absolute;
                     background-color: red;
                     top: -30%;
                     right: -30%;
                     color: white;
-                    padding: 5px;
+                    padding: 4px;
                     border-radius: 5px;
                     @include Posten;
                 }
