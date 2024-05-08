@@ -25,7 +25,7 @@
     @include teachers;
     background-color: $color;
     border-radius: 5px;
-    padding: 5px 8px;
+    padding: 5px 5px;
     cursor: pointer;
 }
 @mixin incre-decre($color){
@@ -113,15 +113,17 @@ $bg-color: #212529;
             }
 
             .card-container {
-                width: clamp(350px, 35vw, 100rem);
                 
                 .card {
                     margin-bottom: 20px;
                     border: 2px solid $bg-color;
-                    @include flex;
-                    width: 100%;
+                    
                     position: relative;
+
+                    width: clamp(290px, 35vw, 100rem);
                     height: 25vh;
+
+                    @include flex;
                     .cross{
                         position: absolute;
                         top: 10px;
@@ -148,10 +150,10 @@ $bg-color: #212529;
                         gap: 15px;
                         .title{
                             @include flex;
-                            gap: 10px;
+                            gap: 5px;
                             .name{
                                 @include Posten;
-                                font-size: clamp(1.25rem,1.5vw,10rem);
+                                font-size: clamp(1rem,1.5vw,10rem);
                             }
                             .price{
                                 @include button(black);
