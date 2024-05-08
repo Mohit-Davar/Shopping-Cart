@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin Posten{
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin teachers{
+    font-family: "Teachers", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+$bg-color: #212529;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    body {
+        nav {
+            height: 15vh;
+            background-color: $bg-color;
+            @include flex;
+            justify-content: space-between;
+            padding-inline: 5vw;
+
+            .title {
+                color: white;
+                font-size: clamp(1rem, 2vw, 10rem);
+                
+                @include Posten;
+            }
+            .logo{
+                position: relative;
+                background-color: white;
+                padding:5px;
+                border-radius: 5px;
+                a,.icon{
+                    color: $bg-color;
+                    font-size: 1.5rem;
+                }
+                .counter{
+                    position: absolute;
+                    background-color: red;
+                    top: -30%;
+                    right: -30%;
+                    color: white;
+                    padding: 2px;
+                    border-radius: 5px;
+                    @include Posten;
+                }
+            }
+        }
+        main{
+            min-height: calc(100vh - 15vh);
+            padding: 20px 15vw ;
+
+            @include flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            .card{
+
+                border: 2px solid $bg-color;
+                
+                height: 50vh;
+                width: 15rem;
+
+                .photo{
+                    height: 60%;
+                    width: 100%;
+                    background-size: cover;
+                    background-position: center;
+                }
+                .text{
+                    height: 40%;
+                    padding: 10px;
+
+                    @include flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    
+
+                    .item-name{
+                        color: black;
+                        font-size: 1.25rem;
+                        @include Posten;    
+                    }
+                    .description{
+                        @include teachers;
+                    }
+                    .price{
+                        width: 100%;
+                        @include flex;
+                        justify-content: space-between;
+                        .value{
+                            @include Posten;
+                            font-size: 1.5rem;
+                        }
+                        .increment,.decrement{
+                            cursor: pointer;
+                            user-select: none;
+                        }
+                        .increment{
+                            color: green;
+                        }
+                        .decrement{
+                            color: red;
+                        }
+                        .qty{
+                            gap: 10px;
+                            @include flex;
+                            font-size: 1.5rem;
+                            @include Posten;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
