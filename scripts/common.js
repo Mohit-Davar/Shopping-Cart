@@ -45,14 +45,14 @@ Items.forEach(item => {
 function updateTotalBillHTML() {
     document.querySelector("main .heading").innerHTML = `Total Bill : ${totalBill}`
 }
-function updateBill(item) {
-    totalBill = totalBill + (item.value)
+function updateBill(item,sign) {
+    totalBill = totalBill + sign*(item.value)
     if (document.querySelector("main .heading")) {
         updateTotalBillHTML()
     }
 
 }
-function updateHTML(item, element) {
+function updateHTML(item, element , sign) {
     //updating values in card
     element.querySelector(".text .qty .qty-value").innerHTML = item.qty
     updateCartIconCounter()
@@ -60,7 +60,7 @@ function updateHTML(item, element) {
         element.querySelector(".text .cost").innerHTML = `$ ${item.qty * item.value}`
     }
     //updating value of Total Bill
-    updateBill(item)
+    updateBill(item ,sign)
     saveToLocalStorage(item)
 }
 
@@ -76,7 +76,7 @@ function increment(id) {
         if (item.id === id) {
             item.qty++
             TotalItems++
-            updateHTML(item, element)
+            updateHTML(item, element ,1)
         }
     })
 }
@@ -87,7 +87,7 @@ function decrement(id) {
             if (item.qty > 0) {
                 item.qty--
                 TotalItems--
-                updateHTML(item, element)
+                updateHTML(item, element,-1)
             }
         }
     })
